@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -6,6 +11,137 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+
+
+
+
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1b2430;
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+
+#logotext{
+  font-size: 1.9rem;
+  position: absolute;
+  left: 15%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#navbars{
+  display: flex;
+  align-items: center ;
+  justify-content:space-between;
+  color:#fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar li{
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+#navbar li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+#navbar li a:hover,
+#navbar li a:active,
+#navbars li a:hover{
+  color:#17cf97;
+  cursor: pointer;
+}
+#navbar li a:hover::after,
+#navbar li a:active::after,
+#navbars li a:hover::after{
+  content: "";
+  width: 40%;
+  height: 2px;
+  background: #01996b;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+
+}
+#mobile{
+  display: none;
+}
+
+#mobile i{
+color: #fff;
+align-items: center;
+}
+@media screen and (max-width:800px) {
+  
+  #navbar{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: fixed;
+      top: 90px;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background: #1b2430;
+      box-shadow: 0px 40px 60px rgba(0,0,0,0.06);
+      padding: 40px 0 0 10px;
+      transition: 0.3s ease-in-out;
+  }
+  #logotext{
+    display: none;
+    
+  }
+  #navbars{
+    display: none;
+  }
+  #navbar .active{
+      right: 0px;
+  }
+ #navbar li{
+  margin-bottom: 25px;
+ }
+
+  #mobile{
+      display: block;
+  }
+  #mobile i{
+      font-size: 24px;
+      cursor: pointer;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  #navbars li{
+    font-size: 1.4rem;
+    position: relative;
+    left: 20%;
+  }
+  #logotext{
+    font-size: 1.6rem;
+    position: relative;
+    left:-8%;
+  }
+ }
+
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -39,8 +175,10 @@
 
 body {
   @apply bg-gray-800;
+
 }
 
 textarea {
   @apply resize-none;
+  
 }
